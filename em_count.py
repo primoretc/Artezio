@@ -4,25 +4,25 @@
 
 email = 1  # если есть рассылка, то полагаю, что как минимум один адрес уже есть
 
-ef = open('email_list.txt', 'r') # открываю файл исходник, полученый копипастой из заголовка письма <To:>
-mailFile = open("out_email.txt", "w") # открываю файл в который буду собирать адреса
+inFile = open('email_list.txt', 'r') # открываю файл исходник, полученый копипастой из заголовка письма <To:>
+outFile = open("out_email.txt", "w") # открываю файл в который буду собирать адреса
 
 # бегу по строчкам файла 
-for line in ef:
+for line in inFile:
     
     s1 = line.find("<")
     s2 = line.rfind(">")
     adress = line[s1+1:s2] 
     
-    mailFile.write(adress + "\n")
+    outFile.write(adress + "\n")
     # бегу по символам строки...
     for simvol in line:
         if simvol == ",":
             email += 1
             
 # всё закрываю
-ef.close()
-mailFile.close()
+inFile.close()
+outFile.close()
 
 print(f"Число зарегавшихся: {email}")
 
