@@ -3,3 +3,12 @@
 Sample List : ['abc', 'xyz', 'aba', '1221']
 Expected Result : 2
 """
+inList = ['c','abc', 'xyz', 'aba', '1221', '55', '34564gfhd3', 'казак']
+k = 0
+for i in inList:
+    if len(i) >=2 :
+        if i[0]==i[-1]:
+            k+=1
+            print(i)
+print (k)
+
