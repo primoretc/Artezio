@@ -5,3 +5,22 @@ Expected result: True
 Input: set([1,2]), set([3,4), set([5])
 Expected result: False
 """
+a = set([1,2])
+b = set([2,3])
+c = set([2])
+
+
+if c.issubset(a) and c.issubset(b):
+    print (True)
+else:
+    print (False)
+
+
+a = set([1,2])
+b = set([3,4])
+c = set([5])
+
+if c.issubset(a) and c.issubset(b):
+    print (True)
+else:
+    print (False)
