@@ -35,6 +35,14 @@ def myRange(x, y, z):
         while i < y-z:
             i+=z
             res.append(i)
+    
+    if z < 0:
+        while abs(i) < abs(y + 1):
+            i += z
+            res.append(i)
+
+
+
     return res
 
     
@@ -47,12 +55,3 @@ print(f"myRange(1,20,5) = {myRange(1,20,5)}")
 
 print(f"myRange(0,-7,-1) = {myRange(0,-7,-1)}")
 
-
-'''    if z < 0:
-        y+=1
-        print(f"y {y}")
-        while abs(i) < abs(y-z):
-            i+=z
-            print(f"i {i}")
-            res.append(abs(i))
-'''
