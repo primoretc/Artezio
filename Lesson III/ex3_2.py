@@ -13,9 +13,12 @@ def nsum(*args, **kwargs):
     suma = 0
     for i in args:
         # надо вставить проверку чиссло это или нет и дальше принимать действия
-        print(i)
-        product *=i
-        suma +=i
+        if isinstance(i,int):
+            product = product * i
+            print(f"product = {product}")
+            suma = suma + i
+            print(f"suma = {suma}")
+
     for k, value in kwargs.items():
         print(k, value)
 
@@ -24,4 +27,4 @@ def nsum(*args, **kwargs):
 
 
 
-nsum(1, 2, [3, 4, (5, 6, 0)], a=(10, 11), b=(3, 4, [5, 6, [7, 8], []]))
+nsum(1, 2, 10, [3, 4, (5, 6, 0)], a=(10, 11), b=(3, 4, [5, 6, [7, 8], []]))
