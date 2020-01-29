@@ -9,10 +9,17 @@
 #z = (1, 2, [3, 4, (5, 6, 0)], a=(10, 11), b=(3, 4, [5, 6, [7, 8], []]))
 
 def nsum(*args, **kwargs):
+    product = 1
+    suma = 0
     for i in args:
+        # надо вставить проверку чиссло это или нет и дальше принимать действия
         print(i)
+        product *=i
+        suma +=i
     for k, value in kwargs.items():
         print(k, value)
+
+    return product, suma
         
 
 
