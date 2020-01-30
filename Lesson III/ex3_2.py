@@ -13,14 +13,15 @@ def nsum(*args, **kwargs):
     suma = 0
  
     def wtf(i):                                         # в этой функции буду перебирать элемнты и эту функцию вызывать рекурсивно
+        
+   
+
         if isinstance(i,int):                           # если элемент целое число, то делаем сумму и произведение
             nonlocal product
             nonlocal suma
             if i != 0:                                  # произведение не нулевых элементов
                 product = product * i
-            print(f"product = {product}")
             suma = suma + i
-            print(f"suma = {suma}")
             return i
 
         elif isinstance(i,list) or isinstance(i,tuple):  # если элемент список или кортеж то берем по одному элемиенту из него
@@ -32,9 +33,7 @@ def nsum(*args, **kwargs):
         wtf(i)
 
     for k, i in kwargs.items():             # далее работаем с аргументами переменной длины с указанием ключевого слова
-        print(k, i)
         for k, i in enumerate(i):
-            print (f"value = {i}")
             wtf(i)
 
 
@@ -42,4 +41,7 @@ def nsum(*args, **kwargs):
     return product, suma
         
 
-nsum(1, 2, 10, [3, 4, (5, 6, 0)], a=(10, 11), b=(3, 4, [5, 6, [7, 8], []]))
+res = nsum(1, 2, 10, [3, 4, (5, 6, 0)], a=(10, 11), b=(3, 4, [5, 6, [7, 8], []]) ) 
+
+
+print( res )
