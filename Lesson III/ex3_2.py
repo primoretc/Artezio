@@ -11,40 +11,33 @@
 def nsum(*args, **kwargs):
     product = 1
     suma = 0
-    # def wtf(x, pr, su):
-    #     if isinstance(x,int):                   # если элемент число, то делаем сумму и произведение
-    #         pr = pr * x
-    #         print(f"product = {pr}")
-    #         su = su + x
-    #         print(f"suma = {su}")
-    #         return x, pr, su
-    #     elif isinstance(x,list):                # если элемент список то берем по одному элемиенту из него
-    #         for k, i in enumerate(x):
-    #             print (f"x = {x}")
-    #             wtf(x, pr, su )
-    def wtf(i):    
-        if isinstance(i,int):                   # если элемент число, то делаем сумму и произведение
+ 
+    def wtf(i):                                         # в этой функции буду перебирать элемнты и эту функцию вызывать рекурсивно
+        if isinstance(i,int):                           # если элемент целое число, то делаем сумму и произведение
             nonlocal product
             nonlocal suma
-            if i != 0: 
+            if i != 0:                                  # произведение не нулевых элементов
                 product = product * i
             print(f"product = {product}")
             suma = suma + i
             print(f"suma = {suma}")
             return i
-        elif isinstance(i,list):                # если элемент список то берем по одному элемиенту из него
+
+        elif isinstance(i,list) or isinstance(i,tuple):  # если элемент список или кортеж то берем по одному элемиенту из него
             for k, i in enumerate(i):
                 wtf(i)
-        elif isinstance(i,tuple):                # если элемент кортеж то берем по одному элемиенту из него
-            for k, i in enumerate(i):
-                print (f"i = {i} type = {type(i)}")
-                wtf(i)                
+          
 
-    for i in args:
+    for i in args:                          # сначала работаем с аргументами переменной длины без указания ключевого слова
         wtf(i)
 
-    for k, value in kwargs.items():
-        print(k, value)
+    for k, i in kwargs.items():             # далее работаем с аргументами переменной длины с указанием ключевого слова
+        print(k, i)
+        for k, i in enumerate(i):
+            print (f"value = {i}")
+            wtf(i)
+
+
 
     return product, suma
         
