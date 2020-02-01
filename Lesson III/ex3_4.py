@@ -30,9 +30,8 @@ def treeXml(a):
     def tagList(x): 
         tag = ""
         lt=[]
-        print(a)
         l=a.split("<")
-        l.remove("")
+        l.remove("") # первый элемент в списке тэгов пполучается пустой. Ег удаляю
         for i, value in enumerate(l):
             tag = "<" + value
             lt.append(tag)
