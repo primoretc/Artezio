@@ -16,12 +16,15 @@ def mm(a, b, c, d, l=[]):
     smax = max(n)
     return avr , smax
 
-    
+
 print(mm(1,2,3,4))  
-
 print(mm(-3, -2, 10, 1))
-
 print(mm(7,8,8,1))
+print(mm(2,2,2,3))
+print(mm(2,4,8,2))
+
+
+
 
 
 
