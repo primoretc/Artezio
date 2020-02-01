@@ -6,3 +6,24 @@
                   foo(7,8,8,1) -> 6, 10
 
 '''
+def mm(a, b, c, d, l=[]):
+    avr = (a + b + c + d) / 4
+    m = max (a,b,c,d)        
+    def inner(x):           
+        l.append(x)
+        return  l    
+    n = inner(m)
+    smax = max(n)
+    return avr , smax
+
+    
+print(mm(1,2,3,4))  
+
+print(mm(-3, -2, 10, 1))
+
+print(mm(7,8,8,1))
+
+
+
+
+
