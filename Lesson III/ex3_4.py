@@ -23,19 +23,20 @@
     <element1 /> - тэг  пустого элемента
     <element3></element3> - тэги начала и конца элемента
 '''
-
+#from lxml import etree
+import xml.etree.ElementTree as ET
 
 a = '<root><element1 /><element2 /><element3><element4 /></element3></root>'
-def treeXml(a):
-    def tagList(x): 
-        tag = ""
-        lt=[]
-        l=a.split("<")
-        l.remove("") # первый элемент в списке тэгов пполучается пустой. Ег удаляю
-        for i, value in enumerate(l):
-            tag = "<" + value
-            lt.append(tag)
-        return lt
-    tagList(a)
 
-treeXml(a)
+tree = ET.fromstring(a)
+
+print("'name': '", tree.tag,"'," )
+print("'children': [") 
+
+for elem in tree:
+    t = 1
+    #print(tree.tag)
+    print("\t", elem.tag, elem.attrib)
+    for subelem in elem:
+        t+=1
+        print("\t"*t, subelem.tag, subelem.attrib)
