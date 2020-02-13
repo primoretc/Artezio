@@ -37,3 +37,20 @@
     выполнять работы в произвольном порядке. Считать, что количество попыток на выполнение
     каждого из заданий ограничено.
 '''
+
+
+class Student :
+
+    def __init__(self, name, course):
+        pass
+
+    def make_lab (self, m, n):
+        pass
+
+    def make_exam (self, m):
+        pass
+
+    def is_certified (self):
+        pass        
+
+
