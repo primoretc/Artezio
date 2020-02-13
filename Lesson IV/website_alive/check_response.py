@@ -1,4 +1,5 @@
-def check_response(url):
-    res = website_alive.make_request.make_req(url)
-    return res
+from website_alive.make_request import mk_req
+def chk_res(url):
+    res = mk_req(url)
+    return res.status_code == 200
 

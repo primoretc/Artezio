@@ -1,8 +1,4 @@
-# make_request
-import requests as re
-def make_request(url):
-    req = re.request('GET', url)
+import requests
+def mk_req(url):
+    req = requests.request('GET', url)
     return req
-
-
-#print(make_req("http://google.ru"))

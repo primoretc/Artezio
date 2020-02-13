@@ -1,6 +1,11 @@
-from  website_alive import check_response 
-from  website_alive import make_request 
+from website_alive.check_response import chk_res
+
+
 #url = input("Введите адрес сайта: ")
 url="http://google.ru"
 
-print(check_response(url))
+print(chk_res(url))
+if chk_res(url):
+    print("Site alive!")
+else:
+    print("Site down!")
